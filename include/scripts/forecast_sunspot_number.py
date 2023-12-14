@@ -44,7 +44,7 @@ def main():
         endog=train_df["daily_sunspot_number"],
         trend=None,
         seasonal="add",
-        # seasonal_periods=365 * 11,  # 11 years
+        seasonal_periods=365 * 11,  # 11 years
         freq="D",
     ).fit()
     train_df["HWL"] = model_lts_add.fittedvalues.copy()
