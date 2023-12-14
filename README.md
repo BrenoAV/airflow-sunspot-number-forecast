@@ -1,6 +1,7 @@
 # Airflow Sunspot Number Forecast
 
 - [Airflow Sunspot Number Forecast](#airflow-sunspot-number-forecast)
+- [Introduction](#introduction)
 - [Setting up](#setting-up)
   - [Astro CLI](#astro-cli)
   - [Docker or Podman](#docker-or-podman)
@@ -10,6 +11,10 @@
 
 
 ![Airflow pipeline](imgs/pipeline.png)
+
+# Introduction
+
+Dataset by ........
 
 # Setting up
 
@@ -93,7 +98,7 @@ The default Postgres DB credentials are: postgres:postgres
 ```console
 $ python -m venv venv
 $ source venv/bin/activate  # unix system
-$ pip install notebook fastparquet==2023.10.1 pyarrow==14.0.1 statsmodels==0.14.0
+$ pip install notebook plotly fastparquet==2023.10.1 pyarrow==14.0.1 statsmodels==0.14.0
 ```
 
 2. Open Jupyter Notebook and go to [notebooks/Results.ipynb](notebooks/Results.ipynb)
@@ -101,3 +106,7 @@ $ pip install notebook fastparquet==2023.10.1 pyarrow==14.0.1 statsmodels==0.14.
 ```console
 $ jupyter notebook
 ```
+
+3. Execute all the cells and generate the final predictions graph
+
+![Final predictions of the Sunspot Number](imgs/preds.png)

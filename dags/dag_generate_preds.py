@@ -106,7 +106,7 @@ with DAG(
         task_id="forecast_sunspot_number",
         bash_command=(
             "python /usr/local/airflow/include/scripts/forecast_sunspot_number.py"
-            " -sd 2020-05-01 -ed 2050-05-01"
+            " -sd 2020-05-01 -ed 2031-05-01"
             " -dp '{{task_instance.xcom_pull(task_ids='format_data', key='parquet_file_path')}}'"
         ),
     )
