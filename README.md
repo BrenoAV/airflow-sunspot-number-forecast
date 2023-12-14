@@ -2,6 +2,7 @@
 
 - [Airflow Sunspot Number Forecast](#airflow-sunspot-number-forecast)
 - [Introduction](#introduction)
+- [Dataset](#dataset)
 - [Setting up](#setting-up)
   - [Astro CLI](#astro-cli)
   - [Docker or Podman](#docker-or-podman)
@@ -10,11 +11,24 @@
 - [\[Optional\] Dashboard](#optional-dashboard)
 
 
-![Airflow pipeline](imgs/pipeline.png)
 
 # Introduction
 
-Dataset by ........
+**Motivation:** I watched this video [O QUE É O BURACO NO SOL QUE TEM O TAMANHO DE 60 TERRAS? - SpaceToday](https://www.youtube.com/watch?v=GkWtPBEUdDk) talking about the sunspot number be more than forecasted by the NOAA (National Oceanic and Atmospheric Administration) and this is important because results in intense magnetic activity. More info here: [Sunspot - Wikipedia](https://en.wikipedia.org/wiki/Sunspot) 
+
+You can find the prediction provided by NOAA: [https://www.swpc.noaa.gov/communities/space-weather-enthusiasts-dashboard](https://www.swpc.noaa.gov/communities/space-weather-enthusiasts-dashboard)
+
+I am using [Apache AirFlow](https://airflow.apache.org/) to schedule to obtain new data about the Sunspot Number Progression at a monthly frequency. Pipeline:
+
+![Airflow pipeline](imgs/pipeline.png)
+
+For forecasting, I am using the [Exponential Smoothing](https://otexts.com/fpp3/expsmooth.html) with a seasonal interval of 11 years because is the time of the cycle (see more in the Wikipedia link above)
+
+Furthermore, I'm using [min.io](https://min.io/) to upload the results to the cloud of the forecast and [jupyter notebook](https://jupyter.org/) to show the data locally.
+
+# Dataset
+
+Source: WDC-SILSO, Royal Observatory of Belgium, Brussels.
 
 # Setting up
 
@@ -110,3 +124,11 @@ $ jupyter notebook
 3. Execute all the cells and generate the final predictions graph
 
 ![Final predictions of the Sunspot Number](imgs/preds.png)
+
+---
+
+<p align='center'>
+<strong>MIT License</strong><br>
+This project is licensed under the MIT License - see the LICENSE file for details.<br><br>
+&copy; 2023 BrenoAV
+</p>
